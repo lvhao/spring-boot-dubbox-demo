@@ -1,0 +1,60 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+        classpath ('org.springframework:springloaded:1.2.6.RELEASE')
+    }
+}
+
+allprojects  {
+    group 'com.github.springbootdubboxdemo'
+    version '1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    compileJava {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+        options.encoding = 'UTF-8'
+    }
+
+    compileTestJava {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+        options.encoding = 'UTF-8'
+    }
+
+    repositories {
+        mavenCentral()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+    }
+
+    ext {
+        springVersion = '4.3.2.RELEASE'
+        springBootVersion = '1.4.0.RELEASE'
+        springfoxVersion = '2.5.0'
+    }
+
+    configurations {
+        compile.exclude group:'log4j'
+        compile.exclude group:'org.slf4j', module:'slf4j-log4j12'
+        compile.exclude group:'commons-logging'
+        compile.exclude group:'org.apache.httpcomponents'
+    }
+}
+
+configure(subprojects.findAll {subProject -> subProject.name != 'api'}) {
+    apply plugin: 'spring-boot'
+
+    dependencies {
+        testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+        compile ("org.springframework.boot:spring-boot-starter:${springBootVersion}")
+        compile("com.alibaba:dubbo:2.8.4")
+        compile("com.google.guava:guava:19.0")
+        compile("org.apache.zookeeper:zookeeper:3.4.9")
+    }
+}

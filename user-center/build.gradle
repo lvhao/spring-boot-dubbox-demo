@@ -1,0 +1,10 @@
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(":api")
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+}

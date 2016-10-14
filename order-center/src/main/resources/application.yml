@@ -1,0 +1,26 @@
+#####################################
+# 具体配置 可以参考
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+#####################################
+# banner
+banner:
+  charset: UTF-8
+  location: classpath:banner.txt
+
+# 应用属性配置
+application:
+  name: order-center
+  version: v1.0.0
+
+logging:
+  name: order-center
+
+# dubbo 配置
+dubbo:
+  application:
+    name: orderCenter
+    owner: testTeam
+  registry:
+    address: zookeeper://zk.addr.dev:6666
+  annotation:
+    package: com.github.springbootdubboxdemo.ordercenter

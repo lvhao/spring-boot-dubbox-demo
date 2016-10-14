@@ -1,0 +1,32 @@
+#####################################
+# 具体配置 可以参考
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+#####################################
+# banner
+banner:
+  charset: UTF-8
+  location: classpath:banner.txt
+
+# 应用属性配置
+application:
+  name: user-center
+  version: v1.0.0
+
+logging:
+  name: user-center
+
+# dubbo 配置
+dubbo:
+  application:
+    name: userCenter
+    owner: uc
+    org: test
+  registry:
+    address: zookeeper://zk.addr.dev:6666
+    zookeeper:
+      client: curator
+  annotation:
+    package: com.github.springbootdubboxdemo.usercenter
+  protocol:
+    name: dubbo
+    port: 7777
