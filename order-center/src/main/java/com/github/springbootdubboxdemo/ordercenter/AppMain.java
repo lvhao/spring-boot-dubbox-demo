@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
 /**
- * 程序入口
+ * orderCenter程序入口
  *
  * @author: lvhao
  * @since: 2016-10-13 17:01

@@ -81,12 +81,12 @@ public class DubboxConfig {
     }
 
     /**
-     * 基于注解的dubbox service配置
+     * 基于注解的dubbo service配置
      *
      * 必须被标注为 static
      * AnnotationBean是{@link org.springframework.beans.factory.config.BeanFactoryPostProcessor}类型
      * 该类型由于会对其他标注了@Autowired,@Value,@PostConstruct 等注解的类进行增强处理，所以必须提前初始化
-     * 标注为 static后 不需要依赖@Configuration的类实例即可使用
+     * 标注为 static后 不需要依赖@Configuration标注的类实例即可使用
      *
      * @param annotationPackage
      * @return
