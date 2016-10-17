@@ -1,0 +1,17 @@
+# dubbo 配置
+dubbo:
+  application:
+    name: test
+    owner: testTeam
+    org: testOrg
+  registry:
+    address: zookeeper://zk.addr.dev:6666
+  annotation:
+    package: com.github.springbootdubboxdemo.ordercenter
+  protocol:
+    name: dubbo
+    port: 8888
+  provider:
+    timeout: 30000
+    retries: 10
+    delay: 1000

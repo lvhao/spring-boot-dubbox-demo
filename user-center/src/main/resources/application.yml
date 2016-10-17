@@ -19,14 +19,12 @@ logging:
 dubbo:
   application:
     name: userCenter
-    owner: uc
-    org: test
+    owner: userTeam
+    org: userOrg
   registry:
     address: zookeeper://zk.addr.dev:6666
-    zookeeper:
-      client: curator
   annotation:
     package: com.github.springbootdubboxdemo.usercenter
   protocol:
     name: dubbo
-    port: 7777
+    port: 8888

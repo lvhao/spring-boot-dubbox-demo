@@ -1,12 +1,14 @@
 package com.github.springbootdubboxdemo.api.model;
 
+import java.io.Serializable;
+
 /**
  * 订单实体描述
  *
  * @author: lvhao
  * @since: 2016-10-13 15:55
  */
-public class Order {
+public class Order implements Serializable{
     private long userId;
     private String orderNo;
     private String remark;

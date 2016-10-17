@@ -1,12 +1,14 @@
 package com.github.springbootdubboxdemo.api.model;
 
+import java.io.Serializable;
+
 /**
- * 功能简单描述
+ * 用户实体
  *
  * @author: lvhao
  * @since: 2016-10-13 16:03
  */
-public class User {
+public class User implements Serializable{
     private long userId;
     private String userName;
 

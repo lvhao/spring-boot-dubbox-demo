@@ -1,0 +1,3 @@
+# 自动加载DubboAutoConfiguration类
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.springbootdubboxdemo.dubbosupport.config.DubboAutoConfiguration

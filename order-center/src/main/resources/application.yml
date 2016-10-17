@@ -19,8 +19,12 @@ logging:
 dubbo:
   application:
     name: orderCenter
-    owner: testTeam
+    owner: orderTeam
+    org: orderOwner
   registry:
     address: zookeeper://zk.addr.dev:6666
   annotation:
     package: com.github.springbootdubboxdemo.ordercenter
+  protocol:
+    name: dubbo
+    port: 7777

@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @since: 2016-10-13 17:42
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = AppMain.class)
+@SpringBootTest(classes = AppMain.class,
+        webEnvironment = SpringBootTest.WebEnvironment.NONE)
 public class TestBase {
 }

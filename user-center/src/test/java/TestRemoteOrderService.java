@@ -4,7 +4,7 @@ import com.github.springbootdubboxdemo.api.service.OrderService;
 import org.junit.Test;
 
 /**
- * 功能简单描述
+ * 调用远端orderService
  *
  * @author: lvhao
  * @since: 2016-10-13 20:40

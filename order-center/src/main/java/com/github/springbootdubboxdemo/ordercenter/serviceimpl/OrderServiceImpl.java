@@ -14,7 +14,7 @@ import java.util.List;
  * @author: lvhao
  * @since: 2016-10-13 16:07
  */
-@Service(protocol = "dubbo")
+@Service
 public class OrderServiceImpl implements OrderService {
 
     @Override
