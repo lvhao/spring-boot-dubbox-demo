@@ -9,7 +9,7 @@ buildscript {
     }
 }
 
-allprojects  {
+allprojects {
     group 'com.github.springbootdubboxdemo'
     version '1.0-SNAPSHOT'
 
@@ -44,6 +44,8 @@ allprojects  {
         compile.exclude group:'org.slf4j', module:'slf4j-log4j12'
         compile.exclude group:'commons-logging'
         compile.exclude group:'org.apache.httpcomponents'
+        compile.exclude group:'com.google.guava', module:'guava'
+        compile.exclude group:'org.springframework', module: 'spring-web'
     }
 }
 
@@ -55,10 +57,10 @@ project(":dubbo-support") {
     }
 }
 
-configure(subprojects.findAll {subProject -> subProject.name != 'api' && subProject.name != 'dubbo-support'}) {
-    apply plugin: 'spring-boot'
+configure([project(':order-center'), project(':user-center')]) {
     dependencies {
         testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
-        compile("com.google.guava:guava:19.0")
+        compile(project(":api"))
+        compile(project(":dubbo-support"))
     }
 }

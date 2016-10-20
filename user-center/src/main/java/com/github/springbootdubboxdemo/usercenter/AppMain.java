@@ -1,7 +1,5 @@
 package com.github.springbootdubboxdemo.usercenter;
 
-import com.github.springbootdubboxdemo.dubbosupport.config.EnableDubboConfiguration;
-
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.Banner;
@@ -15,10 +13,11 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  * @since: 2016-10-13 17:01
  */
 @SpringBootApplication
-@EnableDubboConfiguration
 public class AppMain implements ApplicationRunner {
 
     public static void main(String[] args) {
+        String name = Thread.currentThread().getName();
+        System.out.println("main name = " + name);
         new SpringApplicationBuilder()
                 .sources(AppMain.class)
                 .web(false)
@@ -28,6 +27,8 @@ public class AppMain implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        String name = Thread.currentThread().getName();
+        System.out.println("run name = " + name);
         Thread.currentThread().join();
     }
 }
