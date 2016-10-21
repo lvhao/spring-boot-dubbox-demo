@@ -12,3 +12,4 @@
 *.iml
 out
 gen
+/dubbo-starter/build/

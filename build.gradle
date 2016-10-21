@@ -29,7 +29,7 @@ allprojects {
     }
 
     repositories {
-        mavenCentral()
+        mavenLocal()
         maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
     }
 
@@ -49,10 +49,18 @@ allprojects {
     }
 }
 
-project(":dubbo-support") {
+project(":dubbo-starter") {
     dependencies {
+        compile("com.alibaba:dubbo:2.8.4"){
+            exclude module:'aopalliance:aopalliance'
+            exclude module:'javax.servlet-api:javax.servlet'
+            exclude module:'httpclient:org.apache.httpcomponents'
+            exclude module:'commons-pool:commons-pool'
+            exclude module:'commons-codec:commons-codec'
+            exclude module:'httpcore:org.apache.httpcomponents'
+            exclude module:'org.apache.curator'
+        }
         compile ("org.springframework.boot:spring-boot-starter:${springBootVersion}")
-        compile("com.alibaba:dubbo:2.8.4")
         compile("org.apache.zookeeper:zookeeper:3.4.9")
     }
 }
@@ -61,6 +69,7 @@ configure([project(':order-center'), project(':user-center')]) {
     dependencies {
         testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
         compile(project(":api"))
-        compile(project(":dubbo-support"))
+        compile(project(":dubbo-starter"))
+        compile("com.101tec:zkclient:0.9")
     }
 }

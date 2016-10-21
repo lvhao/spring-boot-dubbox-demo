@@ -1,8 +1,8 @@
-package com.github.springbootdubboxdemo.dubbosupport.prop;
+package com.github.springbootdubboxdemo.dubbostarter.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-import static com.github.springbootdubboxdemo.dubbosupport.prop.DubboConfigConst.DUBBO_PROTOCOL_CFG_PREFIX;
+import static com.github.springbootdubboxdemo.dubbostarter.properties.DubboConfigConst.DUBBO_PROTOCOL_CFG_PREFIX;
 
 /**
  * 对外接口协议端口

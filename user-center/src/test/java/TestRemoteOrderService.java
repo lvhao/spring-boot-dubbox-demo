@@ -1,6 +1,5 @@
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.github.springbootdubboxdemo.api.service.OrderService;
-
 import org.junit.Test;
 
 /**

@@ -1,4 +1,4 @@
-package com.github.springbootdubboxdemo.dubbosupport.config;
+package com.github.springbootdubboxdemo.dubbostarter.config;
 
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
@@ -6,10 +6,10 @@ import com.alibaba.dubbo.config.ProviderConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import com.alibaba.dubbo.config.spring.AnnotationBean;
 import com.alibaba.dubbo.config.spring.schema.DubboBeanDefinitionParser;
-import com.github.springbootdubboxdemo.dubbosupport.prop.DubboApplication;
-import com.github.springbootdubboxdemo.dubbosupport.prop.DubboProtocol;
-import com.github.springbootdubboxdemo.dubbosupport.prop.DubboProvider;
-import com.github.springbootdubboxdemo.dubbosupport.prop.DubboRegistry;
+import com.github.springbootdubboxdemo.dubbostarter.properties.DubboApplication;
+import com.github.springbootdubboxdemo.dubbostarter.properties.DubboProtocol;
+import com.github.springbootdubboxdemo.dubbostarter.properties.DubboProvider;
+import com.github.springbootdubboxdemo.dubbostarter.properties.DubboRegistry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,7 +18,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import static com.github.springbootdubboxdemo.dubbosupport.prop.DubboConfigConst.DUBBO_ANNOTATION_CFG_PACKAGE;
+import static com.github.springbootdubboxdemo.dubbostarter.properties.DubboConfigConst.DUBBO_ANNOTATION_CFG_PACKAGE;
 
 /**
  * starter自动配置Dubbo
@@ -26,8 +26,8 @@ import static com.github.springbootdubboxdemo.dubbosupport.prop.DubboConfigConst
  * @author: lvhao
  * @since: 2016-10-17 12:28
  */
-@ConditionalOnClass(DubboBeanDefinitionParser.class)
 @Configuration
+@ConditionalOnClass(DubboBeanDefinitionParser.class)
 @EnableConfigurationProperties({
         DubboRegistry.class,
         DubboProtocol.class,
@@ -70,7 +70,10 @@ public class DubboAutoConfiguration {
     @Bean
     public RegistryConfig registryConfig(){
         RegistryConfig registryConfig = new RegistryConfig();
+        registryConfig.setProtocol(dubboRegistry.getProtocol());
         registryConfig.setAddress(dubboRegistry.getAddress());
+        registryConfig.setRegister(dubboRegistry.isRegister());
+        registryConfig.setSubscribe(dubboRegistry.isSubscribe());
         return registryConfig;
     }
 
@@ -96,7 +99,7 @@ public class DubboAutoConfiguration {
     public ProviderConfig providerConfig() {
         ProviderConfig providerConfig = new ProviderConfig();
         providerConfig.setTimeout(dubboProvider.getTimeout());
-        providerConfig.setRetries(dubboProvider.getReties());
+        providerConfig.setRetries(dubboProvider.getRetries());
         providerConfig.setDelay(dubboProvider.getDelay());
         return providerConfig;
     }

@@ -1,4 +1,4 @@
-package com.github.springbootdubboxdemo.dubbosupport.config;
+package com.github.springbootdubboxdemo.dubbostarter.config;
 
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 

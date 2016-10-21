@@ -19,12 +19,20 @@ logging:
 dubbo:
   application:
     name: userCenter
-    owner: userTeam
+    owner: userOwner
     org: userOrg
   registry:
-    address: zookeeper://zk.addr.dev:6666
+    protocol: zookeeper
+    address: zk.addr.dev:6666
+    register: true
+    subscribe: true
   annotation:
     package: com.github.springbootdubboxdemo.usercenter
   protocol:
     name: dubbo
     port: 8888
+    thread-count: 1
+  provider:
+    delay: -1
+    timeout: 30000
+    retries: 3

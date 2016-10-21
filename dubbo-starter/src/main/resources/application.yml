@@ -1,0 +1,22 @@
+# dubbo 配置
+# dubbo 配置
+dubbo:
+  application:
+    name: xxxCenter
+    owner: xxxOwner
+    org: xxxOrg
+  registry:
+    protocol: zookeeper
+    address: zk.addr.dev:6666
+    register: true
+    subscribe: true
+  annotation:
+    package: com.github.springbootdubboxdemo
+  protocol:
+    name: dubbo
+    port: 7777
+    thread-count: 1
+  provider:
+    delay: -1
+    timeout: 30000
+    retries: 3

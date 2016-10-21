@@ -16,8 +16,6 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 public class AppMain implements ApplicationRunner {
 
     public static void main(String[] args) {
-        String name = Thread.currentThread().getName();
-        System.out.println("main name = " + name);
         new SpringApplicationBuilder()
                 .sources(AppMain.class)
                 .web(false)
@@ -27,8 +25,6 @@ public class AppMain implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        String name = Thread.currentThread().getName();
-        System.out.println("run name = " + name);
         Thread.currentThread().join();
     }
 }

@@ -1,8 +1,8 @@
-package com.github.springbootdubboxdemo.dubbosupport.prop;
+package com.github.springbootdubboxdemo.dubbostarter.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-import static com.github.springbootdubboxdemo.dubbosupport.prop.DubboConfigConst.DUBBO_PROVIDER_CFG_PREFIX;
+import static com.github.springbootdubboxdemo.dubbostarter.properties.DubboConfigConst.DUBBO_PROVIDER_CFG_PREFIX;
 
 /**
  * 对外接口参数配置
@@ -14,7 +14,7 @@ import static com.github.springbootdubboxdemo.dubbosupport.prop.DubboConfigConst
 public class DubboProvider {
 
     private int timeout;
-    private int reties;
+    private int retries;
     private int delay;
 
     public int getTimeout() {
@@ -25,12 +25,12 @@ public class DubboProvider {
         this.timeout = timeout;
     }
 
-    public int getReties() {
-        return reties;
+    public int getRetries() {
+        return retries;
     }
 
-    public void setReties(int reties) {
-        this.reties = reties;
+    public void setRetries(int retries) {
+        this.retries = retries;
     }
 
     public int getDelay() {
@@ -45,7 +45,7 @@ public class DubboProvider {
     public String toString() {
         final StringBuilder sb = new StringBuilder("DubboProvider{");
         sb.append("delay=").append(delay);
-        sb.append(", reties=").append(reties);
+        sb.append(", retries=").append(retries);
         sb.append(", timeout=").append(timeout);
         sb.append('}');
         return sb.toString();

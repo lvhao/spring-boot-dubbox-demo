@@ -1,4 +1,4 @@
-package com.github.springbootdubboxdemo.dubbosupport;
+package com.github.springbootdubboxdemo.dubbostarter;
 
 import com.github.springbootdubboxdemo.ordercenter.AppMain;
 

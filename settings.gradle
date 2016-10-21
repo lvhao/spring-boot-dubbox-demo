@@ -1,6 +1,6 @@
 rootProject.name = 'spring-boot-dubbox-demo'
 include 'api'
-include 'dubbo-support'
+include 'dubbo-starter'
 include 'user-center'
 include 'order-center'
 

@@ -1,4 +1,4 @@
-package com.github.springbootdubboxdemo.dubbosupport.prop;
+package com.github.springbootdubboxdemo.dubbostarter.properties;
 
 /**
  * dubbo配置项 常量

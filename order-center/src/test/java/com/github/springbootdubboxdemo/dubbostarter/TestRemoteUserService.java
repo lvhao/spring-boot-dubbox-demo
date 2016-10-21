@@ -1,4 +1,4 @@
-package com.github.springbootdubboxdemo.dubbosupport;
+package com.github.springbootdubboxdemo.dubbostarter;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.github.springbootdubboxdemo.api.service.UserService;
