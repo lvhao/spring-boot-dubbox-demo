@@ -4,8 +4,6 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.github.springbootdubboxdemo.api.model.User;
 import com.github.springbootdubboxdemo.api.service.UserService;
 
-import java.util.Optional;
-
 /**
  * 用户接口实现
  *
@@ -16,13 +14,13 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     @Override
-    public Optional<User> queryUser(long userId) {
+    public User queryUser(long userId) {
         User user = null;
         if (userId == 1000L) {
             user = new User();
             user.setUserId(1000L);
             user.setUserName("tester");
         }
-        return Optional.ofNullable(user);
+        return user;
     }
 }

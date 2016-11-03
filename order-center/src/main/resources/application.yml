@@ -30,6 +30,7 @@ dubbo:
     package: com.github.springbootdubboxdemo.ordercenter
   protocol:
     name: dubbo
+    host: localhost
     port: 7777
     thread-count: 1
   provider:

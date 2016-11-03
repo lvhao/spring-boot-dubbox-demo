@@ -1,6 +1,4 @@
-package com.github.springbootdubboxdemo.dubbostarter;
-
-import com.github.springbootdubboxdemo.ordercenter.AppMain;
+package com.github.springbootdubboxdemo.ordercenter;
 
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

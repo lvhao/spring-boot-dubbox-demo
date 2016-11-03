@@ -14,8 +14,17 @@ import static com.github.springbootdubboxdemo.dubbostarter.properties.DubboConfi
 public class DubboProtocol {
 
     private String name;
+    private String host;
     private int port;
     private int threadCount;
+
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
 
     public int getPort() {
         return port;
@@ -45,7 +54,8 @@ public class DubboProtocol {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("DubboProtocol{");
-        sb.append("name='").append(name).append('\'');
+        sb.append("host='").append(host).append('\'');
+        sb.append(", name='").append(name).append('\'');
         sb.append(", port=").append(port);
         sb.append(", threadCount=").append(threadCount);
         sb.append('}');
