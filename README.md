@@ -1,6 +1,5 @@
 # spring-boot-dubbox-demo 
 ## Spring Boot intergrate with Dubbox based on annotation demo
-----
 ## Spring Boot + dubbox全注解方式实例
 # 项目结构说明
 > * __dubbo-starter__ 提供类似spring boot starter功能，自动添加dubbox依赖，配置文件自动解析等。
