@@ -11,6 +11,7 @@
 * 如何实现自己的Spring Boot Starter以及如何配置Dubbox?
 请参考 __dubbo-starter__ 项目，注意 __spring.factories__ 文件位置及作用。
 * Spring Boot 非web环境如何启动Dubbo服务？ 
+
 ```java
 @SpringBootApplication
 public class AppMain implements ApplicationRunner {
@@ -30,7 +31,9 @@ public class AppMain implements ApplicationRunner {
     }
 }
 ```
+
 * Spring Boot + Dubbo + Junit ？
+
 ```java
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = AppMain.class,
