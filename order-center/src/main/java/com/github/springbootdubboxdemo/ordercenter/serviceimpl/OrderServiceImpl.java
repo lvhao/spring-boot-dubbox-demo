@@ -1,12 +1,15 @@
 package com.github.springbootdubboxdemo.ordercenter.serviceimpl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.github.springbootdubboxdemo.api.model.Order;
+import com.github.springbootdubboxdemo.api.model.OrderModel;
+import com.github.springbootdubboxdemo.api.model.UserOrderModel;
+import com.github.springbootdubboxdemo.api.req.UserOrderReq;
 import com.github.springbootdubboxdemo.api.service.OrderService;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 订单接口实现
@@ -18,13 +21,14 @@ import java.util.List;
 public class OrderServiceImpl implements OrderService {
 
     @Override
-    public List<Order> queryUserOrders(long userId) {
-        if (userId == 1000L) {
-            Order order = new Order();
-            order.setUserId(10000L);
-            order.setOrderNo("NO123456789");
-            order.setRemark("测试数据");
-            return Arrays.asList(order);
+    public List<UserOrderModel> queryUserOrders(UserOrderReq req) {
+        if (Objects.equals(req.getUserId(),1000L)) {
+            UserOrderModel uoModel = new UserOrderModel();
+            OrderModel orderModel = new OrderModel();
+            orderModel.setId(1L);
+            orderModel.setUserId(10000L);
+            orderModel.setRemark("测试数据");
+            return Arrays.asList(uoModel);
         }
         return Collections.emptyList();
     }

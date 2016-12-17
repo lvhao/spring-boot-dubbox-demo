@@ -1,6 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 /user-center/build/
-/order-center/build/
+/orderModel-center/build/
 /api/build/
 /build/
 /.gradle/

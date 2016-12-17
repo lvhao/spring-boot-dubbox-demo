@@ -71,5 +71,8 @@ configure([project(':order-center'), project(':user-center')]) {
         compile(project(":api"))
         compile(project(":dubbo-starter"))
         compile("com.101tec:zkclient:0.9")
+        compile("ma.glasnost.orika:orika-core:1.5.0")
+        compile("javax.validation:validation-api:1.1.0.Final")
+        compile("org.hibernate:hibernate-validator:5.3.4.Final")
     }
 }

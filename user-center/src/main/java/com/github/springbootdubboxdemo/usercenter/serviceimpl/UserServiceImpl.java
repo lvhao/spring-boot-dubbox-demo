@@ -1,7 +1,7 @@
 package com.github.springbootdubboxdemo.usercenter.serviceimpl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.github.springbootdubboxdemo.api.model.User;
+import com.github.springbootdubboxdemo.api.model.UserModel;
 import com.github.springbootdubboxdemo.api.service.UserService;
 
 import java.util.Optional;
@@ -16,12 +16,12 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     @Override
-    public Optional<User> queryUser(long userId) {
-        User user = null;
+    public Optional<UserModel> queryUser(long userId) {
+        UserModel user = null;
         if (userId == 1000L) {
-            user = new User();
-            user.setUserId(1000L);
-            user.setUserName("tester");
+            user = new UserModel();
+            user.setId(1000L);
+            user.setName("tester");
         }
         return Optional.ofNullable(user);
     }

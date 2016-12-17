@@ -1,6 +1,7 @@
 package com.github.springbootdubboxdemo.api.service;
 
-import com.github.springbootdubboxdemo.api.model.Order;
+import com.github.springbootdubboxdemo.api.model.UserOrderModel;
+import com.github.springbootdubboxdemo.api.req.UserOrderReq;
 
 import java.util.List;
 
@@ -11,5 +12,5 @@ import java.util.List;
  * @since: 2016-10-13 15:52
  */
 public interface OrderService {
-    List<Order> queryUserOrders(long userId);
+    List<UserOrderModel> queryUserOrders(UserOrderReq req);
 }

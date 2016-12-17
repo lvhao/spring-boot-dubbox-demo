@@ -8,25 +8,25 @@ import java.io.Serializable;
  * @author: lvhao
  * @since: 2016-10-13 15:55
  */
-public class Order implements Serializable{
-    private long userId;
-    private String orderNo;
+public class OrderModel implements Serializable{
+    private Long id;
+    private Long userId;
     private String remark;
 
-    public long getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public String getOrderNo() {
-        return orderNo;
+    public Long getId() {
+        return id;
     }
 
-    public void setOrderNo(String orderNo) {
-        this.orderNo = orderNo;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getRemark() {
@@ -39,10 +39,10 @@ public class Order implements Serializable{
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Order{");
-        sb.append("orderNo='").append(orderNo).append('\'');
-        sb.append(", remark='").append(remark).append('\'');
+        final StringBuilder sb = new StringBuilder("OrderModel{");
+        sb.append("id=").append(id);
         sb.append(", userId=").append(userId);
+        sb.append(", remark='").append(remark).append('\'');
         sb.append('}');
         return sb.toString();
     }

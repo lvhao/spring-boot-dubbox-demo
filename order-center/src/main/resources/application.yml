@@ -9,11 +9,11 @@ banner:
 
 # 应用属性配置
 application:
-  name: order-center
+  name: orderModel-center
   version: v1.0.0
 
 logging:
-  name: order-center
+  name: orderModel-center
 
 # dubbo 配置
 dubbo:
