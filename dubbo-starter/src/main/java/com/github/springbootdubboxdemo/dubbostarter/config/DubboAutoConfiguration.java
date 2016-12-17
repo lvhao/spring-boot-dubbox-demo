@@ -86,6 +86,7 @@ public class DubboAutoConfiguration {
     public ProtocolConfig protocolConfig() {
         ProtocolConfig protocolConfig = new ProtocolConfig();
         protocolConfig.setName(dubboProtocol.getName());
+        protocolConfig.setHost(dubboProtocol.getHost());
         protocolConfig.setPort(dubboProtocol.getPort());
         protocolConfig.setThreads(dubboProtocol.getThreadCount());
         return protocolConfig;

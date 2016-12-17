@@ -1,4 +1,4 @@
-import com.github.springbootdubboxdemo.usercenter.AppMain;
+package com.github.springbootdubboxdemo.usercenter;
 
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

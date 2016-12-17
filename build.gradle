@@ -62,6 +62,7 @@ project(":dubbo-starter") {
         }
         compile ("org.springframework.boot:spring-boot-starter:${springBootVersion}")
         compile("org.apache.zookeeper:zookeeper:3.4.9")
+        compile("com.101tec:zkclient:0.9")
     }
 }
 
@@ -70,7 +71,6 @@ configure([project(':order-center'), project(':user-center')]) {
         testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
         compile(project(":api"))
         compile(project(":dubbo-starter"))
-        compile("com.101tec:zkclient:0.9")
         compile("ma.glasnost.orika:orika-core:1.5.0")
         compile("javax.validation:validation-api:1.1.0.Final")
         compile("org.hibernate:hibernate-validator:5.3.4.Final")

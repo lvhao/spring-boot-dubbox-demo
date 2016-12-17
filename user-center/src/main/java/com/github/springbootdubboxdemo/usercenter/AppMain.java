@@ -18,13 +18,15 @@ public class AppMain implements ApplicationRunner {
     public static void main(String[] args) {
         new SpringApplicationBuilder()
                 .sources(AppMain.class)
-                .web(false)
+                .web(false) // 这里使用非web环境
                 .bannerMode(Banner.Mode.CONSOLE)
                 .run(args);
     }
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+
+        // dubbo 底层netty服务也是异步的，所以需要在ApplicationContext构建后阻塞
         Thread.currentThread().join();
     }
 }

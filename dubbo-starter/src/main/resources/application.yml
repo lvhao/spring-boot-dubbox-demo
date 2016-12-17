@@ -14,7 +14,8 @@ dubbo:
     package: com.github.springbootdubboxdemo
   protocol:
     name: dubbo
-    port: 7777
+    host: localhost
+    port: 6666
     thread-count: 1
   provider:
     delay: -1

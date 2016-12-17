@@ -30,6 +30,7 @@ dubbo:
     package: com.github.springbootdubboxdemo.usercenter
   protocol:
     name: dubbo
+    host: localhost
     port: 8888
     thread-count: 1
   provider:
