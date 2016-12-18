@@ -1,8 +1,14 @@
 package com.github.springbootdubboxdemo.usercenter;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.dubbo.rpc.RpcException;
+import com.github.springbootdubboxdemo.api.req.UserOrderReq;
 import com.github.springbootdubboxdemo.api.service.OrderService;
 import org.junit.Test;
+
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import java.util.Set;
 
 /**
  * 调用远端orderService
@@ -17,7 +23,15 @@ public class TestRemoteOrderService extends TestBase {
 
     @Test
     public void queryUserOrders(){
-        orderService.queryUserOrders(1000L).stream().forEach(System.out::println);
+        UserOrderReq userOrderReq = new UserOrderReq();
+        userOrderReq.setUserId(1000L);
+        userOrderReq.setMobile("138");
+        try{
+            orderService.queryUserOrders(userOrderReq).stream().forEach(System.out::println);
+        } catch (RpcException e) {
+            ConstraintViolationException ve = (ConstraintViolationException) e.getCause();
+            Set<ConstraintViolation<?>> violations = ve.getConstraintViolations();
+            System.out.println(violations);
+        }
     }
-
 }

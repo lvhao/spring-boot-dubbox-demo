@@ -44,8 +44,13 @@ allprojects {
         compile.exclude group:'org.slf4j', module:'slf4j-log4j12'
         compile.exclude group:'commons-logging'
         compile.exclude group:'org.apache.httpcomponents'
-        compile.exclude group:'com.google.guava', module:'guava'
         compile.exclude group:'org.springframework', module: 'spring-web'
+    }
+}
+
+project(":api") {
+    dependencies {
+        compile("org.springframework.boot:spring-boot-starter-validation:${springBootVersion}")
     }
 }
 
@@ -72,7 +77,6 @@ configure([project(':order-center'), project(':user-center')]) {
         compile(project(":api"))
         compile(project(":dubbo-starter"))
         compile("ma.glasnost.orika:orika-core:1.5.0")
-        compile("javax.validation:validation-api:1.1.0.Final")
-        compile("org.hibernate:hibernate-validator:5.3.4.Final")
+        compile("com.google.guava:guava:20.0")
     }
 }

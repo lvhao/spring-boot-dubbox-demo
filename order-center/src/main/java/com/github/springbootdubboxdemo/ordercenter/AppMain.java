@@ -25,6 +25,6 @@ public class AppMain implements ApplicationRunner{
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-//        Thread.currentThread().join();
+        Thread.currentThread().join();
     }
 }

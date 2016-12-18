@@ -11,12 +11,17 @@ import com.github.springbootdubboxdemo.dubbostarter.properties.DubboProtocol;
 import com.github.springbootdubboxdemo.dubbostarter.properties.DubboProvider;
 import com.github.springbootdubboxdemo.dubbostarter.properties.DubboRegistry;
 
+import org.jboss.netty.util.CharsetUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetEncoder;
+import java.nio.charset.StandardCharsets;
 
 import static com.github.springbootdubboxdemo.dubbostarter.properties.DubboConfigConst.DUBBO_ANNOTATION_CFG_PACKAGE;
 
@@ -102,6 +107,8 @@ public class DubboAutoConfiguration {
         providerConfig.setTimeout(dubboProvider.getTimeout());
         providerConfig.setRetries(dubboProvider.getRetries());
         providerConfig.setDelay(dubboProvider.getDelay());
+        providerConfig.setCharset(StandardCharsets.UTF_8.displayName());
+        providerConfig.setValidation(dubboProvider.getValidation());
         return providerConfig;
     }
 

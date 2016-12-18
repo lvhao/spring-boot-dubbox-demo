@@ -16,6 +16,15 @@ public class DubboProvider {
     private int timeout;
     private int retries;
     private int delay;
+    private String validation;
+
+    public String getValidation() {
+        return validation;
+    }
+
+    public void setValidation(String validation) {
+        this.validation = validation;
+    }
 
     public int getTimeout() {
         return timeout;
@@ -44,9 +53,10 @@ public class DubboProvider {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("DubboProvider{");
-        sb.append("delay=").append(delay);
+        sb.append("timeout=").append(timeout);
         sb.append(", retries=").append(retries);
-        sb.append(", timeout=").append(timeout);
+        sb.append(", delay=").append(delay);
+        sb.append(", validation='").append(validation).append('\'');
         sb.append('}');
         return sb.toString();
     }

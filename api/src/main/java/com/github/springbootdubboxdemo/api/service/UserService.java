@@ -1,8 +1,6 @@
 package com.github.springbootdubboxdemo.api.service;
 
-import com.github.springbootdubboxdemo.api.model.User;
-
-import java.util.Optional;
+import com.github.springbootdubboxdemo.api.model.UserModel;
 
 /**
  * 用户相关接口
@@ -11,5 +9,5 @@ import java.util.Optional;
  * @since: 2016-10-13 16:04
  */
 public interface UserService {
-    User queryUser(long userId);
+    UserModel queryUser(Long userId);
 }

@@ -21,3 +21,4 @@ dubbo:
     delay: -1
     timeout: 30000
     retries: 3
+    validation: true

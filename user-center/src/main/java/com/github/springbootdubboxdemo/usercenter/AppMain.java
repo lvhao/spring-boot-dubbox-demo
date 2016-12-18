@@ -27,6 +27,6 @@ public class AppMain implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
 
         // dubbo 底层netty服务也是异步的，所以需要在ApplicationContext构建后阻塞
-        Thread.currentThread().join();
+//        Thread.currentThread().join();
     }
 }

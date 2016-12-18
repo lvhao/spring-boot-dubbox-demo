@@ -7,7 +7,6 @@ import com.github.springbootdubboxdemo.api.req.UserOrderReq;
 import com.github.springbootdubboxdemo.api.service.OrderService;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -30,6 +29,6 @@ public class OrderServiceImpl implements OrderService {
             orderModel.setRemark("测试数据");
             return Arrays.asList(uoModel);
         }
-        return Collections.emptyList();
+        return null;
     }
 }

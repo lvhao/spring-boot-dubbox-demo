@@ -1,7 +1,7 @@
 package com.github.springbootdubboxdemo.ordercenter;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.github.springbootdubboxdemo.api.model.User;
+import com.github.springbootdubboxdemo.api.model.UserModel;
 import com.github.springbootdubboxdemo.api.service.UserService;
 import org.junit.Test;
 
@@ -18,7 +18,7 @@ public class TestRemoteUserService extends TestBase {
 
     @Test
     public void queryUser(){
-        User user = userService.queryUser(1000L);
+        UserModel user = userService.queryUser(1000L);
         System.out.println("user = " + user);
     }
 }

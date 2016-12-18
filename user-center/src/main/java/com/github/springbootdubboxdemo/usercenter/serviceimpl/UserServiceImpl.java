@@ -16,13 +16,13 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     @Override
-    public Optional<UserModel> queryUser(long userId) {
+    public UserModel queryUser(Long userId) {
         UserModel user = null;
         if (userId == 1000L) {
             user = new UserModel();
             user.setId(1000L);
             user.setName("tester");
         }
-        return Optional.ofNullable(user);
+        return user;
     }
 }
