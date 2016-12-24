@@ -1,5 +1,9 @@
 package com.github.springbootdubboxdemo.api.model;
 
+
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Set;
 
@@ -8,7 +12,12 @@ import java.util.Set;
  * Created by root on 2016/12/17 0017.
  */
 public class UserOrderModel implements Serializable {
+
+    @Valid
     private UserModel user;
+
+    @NotNull
+    @Valid
     private Set<OrderModel> orders;
 
     public UserModel getUser() {

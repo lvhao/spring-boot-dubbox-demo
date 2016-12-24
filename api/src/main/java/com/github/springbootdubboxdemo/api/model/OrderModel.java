@@ -1,5 +1,10 @@
 package com.github.springbootdubboxdemo.api.model;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -9,8 +14,16 @@ import java.io.Serializable;
  * @since: 2016-10-13 15:55
  */
 public class OrderModel implements Serializable{
+
+    @NotNull
     private Long id;
+
+    @NotNull
     private Long userId;
+
+    @NotEmpty
+    @NotBlank
+    @Length(max = 20)
     private String remark;
 
     public Long getUserId() {

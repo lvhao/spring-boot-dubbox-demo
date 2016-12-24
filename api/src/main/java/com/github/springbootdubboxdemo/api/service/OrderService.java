@@ -1,9 +1,13 @@
 package com.github.springbootdubboxdemo.api.service;
 
+import com.github.springbootdubboxdemo.api.common.Response;
 import com.github.springbootdubboxdemo.api.model.UserOrderModel;
+import com.github.springbootdubboxdemo.api.req.OrderReq;
 import com.github.springbootdubboxdemo.api.req.UserOrderReq;
+import com.github.springbootdubboxdemo.api.validator.Create;
+import com.github.springbootdubboxdemo.api.validator.Update;
+import org.springframework.validation.annotation.Validated;
 
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
@@ -13,5 +17,7 @@ import java.util.List;
  * @since: 2016-10-13 15:52
  */
 public interface OrderService {
-    @NotNull List<UserOrderModel> queryUserOrders(UserOrderReq req);
+    Response<List<UserOrderModel>> queryUserOrders(UserOrderReq req);
+    Response<Void> createOrder(@Validated({Create.class}) OrderReq req);
+    Response<Void> updateOrder(@Validated({Update.class}) OrderReq req);
 }

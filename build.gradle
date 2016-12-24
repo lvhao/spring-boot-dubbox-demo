@@ -64,6 +64,7 @@ project(":dubbo-starter") {
             exclude module:'commons-codec:commons-codec'
             exclude module:'httpcore:org.apache.httpcomponents'
             exclude module:'org.apache.curator'
+            exclude module:'com.google.guava:guava'
         }
         compile ("org.springframework.boot:spring-boot-starter:${springBootVersion}")
         compile("org.apache.zookeeper:zookeeper:3.4.9")
